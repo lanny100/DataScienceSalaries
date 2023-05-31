@@ -1,0 +1,81 @@
+svg{
+    border: 1px solid #ccc;    
+}
+
+.yaxis .domain{
+    stroke: #bbb;
+}
+
+.yaxis .tick line{
+    stroke: #bbb;
+    stroke-width: 0.5;
+    stroke-dasharray: 4,2;
+}
+
+.xaxis .domain{
+    stroke: #bbb;
+}
+
+.xaxis .tick line{
+    stroke: #bbb;
+    stroke-width: 0.5;
+    stroke-dasharray: 4,2;
+}
+
+.axis .domain{
+    stroke: none;
+}
+.x line{
+    stroke: rgba(27, 31, 34, 0.85);
+
+}
+
+.tooltip{
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    background: rgba(27, 31, 34, 0.85);
+    max-width: 200px;
+}
+.tip-header{
+    border-bottom: 2px solid white;
+    padding: 0.9rem 1rem;
+}
+.tip-body{
+    padding: 0.2rem 0;
+}
+h3,h4{
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
+}
+
+h4{
+    font-weight: normal;
+}
+.tip-info{
+    margin: 0;
+    padding: 0.3rem 1em;
+    font-size: 0.8em;
+}
+.tip-info:nth-of-type(even){
+    background: black;
+}
+
+
+body {
+    background-color: #F2F3F6;
+    font-family: "Verdana", sans-serif;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  #my_dataviz {
+    width: 800px;
+    height: 450px;
+    margin: 0 auto;
+  }
