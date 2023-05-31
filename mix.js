@@ -162,7 +162,7 @@ function setupCanvas(barChartData,barChartData2,salaryClean){
         yAxisDraw.transition(transitionDelay).call(yAxis.scale(yScale));
 
         //Update Header
-        header.select('tspan').text(` ${metric} percent remote ratio data scientist salary ${metric ==='popularity' ? '' : 'in $US'}`).style('font-size','1.2em').style('fill','white');
+        header.select('tspan').text(` ${metric} % remote ratio data scientist salary ${metric ==='popularity' ? '' : 'in $US'}`).style('font-size','1.2em').style('fill','white');
 
         //Update Bar
         bars.selectAll('.bar').data(data,d=>d.countryname).join(
