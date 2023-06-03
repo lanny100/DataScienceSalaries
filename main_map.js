@@ -94,7 +94,7 @@ d3.csv('data/ds_salaries.csv').then(function(data) {
     function mouseover1(e){
         //get data
         const thisData1 = d3.select(this).data()[0];
-        //console.log(thisData1);
+        console.log(thisData1);
         const bodyData = [
             ['salary_in_usd',formatTicks(citySalaries.get(thisData1.properties.name))],
         ];
