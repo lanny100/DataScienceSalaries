@@ -32,10 +32,10 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#intro">Intro</a></li>
-								<li><a href="#work">Work</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="#contact">Contact</a></li>
+								<li><a href="#intro">bar chart1</a></li>
+								<li><a href="#work">bar chart2</a></li>
+								<li><a href="#about">line chart</a></li>
+								<li><a href="#contact">choropleth</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
 						</nav>
@@ -46,21 +46,22 @@
 
 						<!-- Intro -->
 							<article id="intro">
-								<h2 class="major">Intro</h2>
+								<h2 class="major">remote ratio</h2>
 								<!-- <span class="image main"><img src="images/pic01.jpg" alt="" /></span> -->
 								<div  style="text-align:center;" class="bar-chart-container"></div>
 								<div  style="text-align:center;" class="controls">
 									<button class='b1' data-name="0">0 %</button>
 									<button class='b1' data-name="50">50 %</button>
 									<button class='b1' data-name="100">100 %</button>
-								</div>>
+								</div>
+								
 								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
 							</article>
 
 						<!-- Work -->
 							<article id="work">
-								<h2 class="major">Work</h2>
+								<h2 class="major">experience level</h2>
 								<!-- <span class="image main"><img src="images/pic02.jpg" alt="" /></span> -->
 								<div style="text-align:center;" class="bar-chart-container2"></div>
 								<div style="text-align:center;" class="controls">
@@ -68,7 +69,8 @@
 									<button class='b2'data-name="MI">MI</button>
 									<button class='b2' data-name="EN">EN</button>
 									<button class='b2' data-name="EX">EX</button>
-								</div>>
+								</div>
+							
 								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
 								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
 							</article>
@@ -77,18 +79,8 @@
 							<article id="about">
 								<h2 class="major">About</h2>
 								<!-- <span class="image main"><img src="images/pic03.jpg" alt="" /></span> -->
-								<div style="text-align:center;" class="line-chart-container"></div>
-
-								<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+								<div style="text-align:center;" class="line-chart-container"></div>						
 							</article>
-
-							<div class="tooltip">
-								<div class="tip-header">
-									<h13></h13>
-									<h14></h14>
-								</div>
-								<div class="tip-body"></div>
-							</div>
 
 						<!-- Contact -->
 							<article id="contact">
@@ -119,8 +111,18 @@
 									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 								</ul> -->
+								<h1>Data Science Salaries Choropleth Map</h1>
 								<div style="text-align:left;" id="my_dataviz"></div>
+
 							</article>
+							
+							<div class="tooltip">
+								<div class="tip-header">
+									<h13></h13>
+									<h14></h14>
+								</div>
+								<div class="tip-body"></div>
+							</div>
 
 						<!-- Elements -->
 							<article id="elements">
@@ -384,9 +386,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="//unpkg.com/d3"></script>
-			<!-- <script src="https://d3js.org/d3.v4.js"></script>
-			<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-			<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script> -->
+			<!-- <script src="https://d3js.org/d3.v4.js"></script> -->
+			<!-- <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script> -->
+			<!-- <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script> -->
 			<script src="mix.js"></script>
 			<script src="main_line.js"></script>
 			<script src="main_map.js"></script>

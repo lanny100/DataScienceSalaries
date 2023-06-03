@@ -81,12 +81,44 @@ const countryfullname = {
 };
 // Load data
 
-d3.csv("data/ds_salaries.csv").then(function(data) {
-
+d3.csv('data/ds_salaries.csv').then(function(data) {
+    //average
     const citySalaries = d3.rollup(data, v => d3.mean(v, d => +d.salary_in_usd), d => countryfullname[d.employee_residence]);
 
+    //interact
+    const tip = d3.select('.tooltip');
+    function formatTicks(d){
+        return d3.format('.2s')(d)
+                .replace('M','mil').replace('G','bil').replace('T','tri')
+    }
+    function mouseover1(e){
+        //get data
+        const thisData1 = d3.select(this).data()[0];
+        //console.log(thisData1);
+        const bodyData = [
+            ['salary_in_usd',formatTicks(citySalaries.get(thisData1.properties.name))],
+        ];
+        tip.style('left',(e.clientX+15)+'px')
+        .style('top',e.clientY+'px')
+        .transition()
+        .style('opacity',0.98)
+        
+        tip.select('h13').html(`${thisData1.properties.name}`);
+
+        d3.select('.tip-body').selectAll('p').data(bodyData)
+        .join('p').attr('class','tip-info')
+        .html(d=>`${d[0]} : ${d[1]}`);
+    }
+    function mousemove1(e){
+        tip.style('left',(e.clientX+15)+'px')
+        .style('top',e.clientY+'px')
+    }
+    function mouseout1(e){
+        tip.transition()
+        .style('opacity',0)
+    }
     // Set up SVG
-    const svg = d3.select("#my_dataviz")
+    var svg = d3.select("#my_dataviz")
         .append("svg")
         .attr("width", 800)
         .attr("height", 450);
@@ -96,7 +128,7 @@ d3.csv("data/ds_salaries.csv").then(function(data) {
         .scale(120)
         .translate([400, 225]);
 
-    var path = d3.geoPath()
+    var path1 = d3.geoPath()
         .projection(projection);
 
     // Set up color scale
@@ -105,18 +137,21 @@ d3.csv("data/ds_salaries.csv").then(function(data) {
 
     // Load and display the world map
     d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(function(world) {
-        svg.selectAll("path")
+        svg.selectAll(path1)
             .data(world.features)
             .enter()
             .append("path")
+            .attr('class','map')
             .attr("d", d3.geoPath().projection(projection))
             .attr("fill", function(d) {
-                  const city = d.properties.name;
-                  const salary = citySalaries.get(city);
+
+                  const salary = citySalaries.get(d.properties.name);
                   return colorScale(salary);
             });
+        d3.selectAll('.map')
+            .on('mouseover', mouseover1)
+            .on('mousemove', mousemove1)
+            .on('mouseout', mouseout1);
     });
 });
-
-
 

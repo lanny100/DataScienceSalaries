@@ -336,7 +336,7 @@ function setupCanvas(barChartData,barChartData2,salaryClean){
         // debugger;
         // console.log("1",thisBarData.salary_in_usd);
         const bodyData = [
-            ['salary_in_usd',thisBarData.salary_in_usd],
+            ['salary_in_usd',formatTicks(thisBarData.salary_in_usd)],
         ];
         console.log("[bodyData]", bodyData);
         tip.style('left',(e.clientX+15)+'px')
